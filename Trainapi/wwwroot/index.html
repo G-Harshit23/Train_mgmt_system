@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Train Management</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="grid-container">
+        <!-- Register Section -->
+        <section id="register-section" class="grid-item">
+            <h2>Register</h2>
+            <input type="text" id="regName" placeholder="Enter Name">
+            <input type="email" id="regEmail" placeholder="Enter Email">
+            <input type="password" id="regPassword" placeholder="Enter Password">
+            <button onclick="register()">Register</button>
+        </section>
+
+        <!-- Login Section -->
+        <section id="login-section" class="grid-item">
+            <h2>Login</h2>
+            <input type="email" id="email" placeholder="Enter Email">
+            <input type="password" id="password" placeholder="Enter Password">
+            <button onclick="login()">Login</button>
+        </section>
+
+        <!-- Train Management Section -->
+        <section id="train-management" class="grid-item">
+            <h2>Train Management</h2>
+            <button onclick="getAllTrains()">Get All Trains</button>
+
+            <h3>Get or Delete Train</h3>
+            <input type="text" id="trainId" placeholder="Enter Train ID">
+            <button onclick="getTrainById()">Get Train</button>
+            <button onclick="deleteTrain()">Delete Train</button>
+        </section>
+
+        <!-- Add Train Section -->
+        <section id="add-train-section" class="grid-item">
+            <h3>Add Train</h3>
+            <input type="text" id="trainNo" placeholder="Train Number">
+            <input type="text" id="pName" placeholder="Passenger Name">
+            <input type="text" id="seatDetails" placeholder="Seat Details">
+            <button onclick="addTrain()">Add Train</button>
+        </section>
+
+        <!-- Train List Section -->
+        <section id="train-list-section" class="grid-item">
+            <h3>Trains List</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Train Number</th>
+                        <th>Passenger Name</th>
+                        <th>Seat Details</th>
+                    </tr>
+                </thead>
+                <tbody id="trainList"></tbody>
+            </table>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

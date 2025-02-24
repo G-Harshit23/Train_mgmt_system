@@ -1,0 +1,6 @@
+@Trainapi_HostAddress = http://localhost:5023
+
+GET {{Trainapi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
