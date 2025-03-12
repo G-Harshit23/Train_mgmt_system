@@ -17,7 +17,6 @@ namespace Trainapi.Controllers
             _context = context;
         }
 
-        //all users
         [HttpGet]
         public async Task<IActionResult> GetAllUsers()
         {
@@ -25,7 +24,7 @@ namespace Trainapi.Controllers
             return Ok(users);
         }
 
-        // Create or Edit train records
+        
         [HttpPost]
         public async Task<IActionResult> CreateEdit([FromBody] List<Train> booking)
         {
@@ -39,7 +38,7 @@ namespace Trainapi.Controllers
             return Ok(booking);
         }
 
-        // Get train by ID
+     
         [HttpGet("{id}")]
         public async Task<IActionResult> Get(int id)
         {
@@ -51,7 +50,6 @@ namespace Trainapi.Controllers
             return Ok(result);
         }
 
-        // Delete train by ID
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {

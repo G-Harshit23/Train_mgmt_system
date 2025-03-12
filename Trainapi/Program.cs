@@ -7,14 +7,14 @@ using Trainapi.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Configure SQL Server
+
 builder.Services.AddDbContext<AppDbContext>(opt =>
 {
     opt.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
 
-// Add JWT Authentication
-var key = "refdrewsaqxdcvfgtrhyjuinhgtfrdewsazxcvfgbhnjuioklpoimnhgtrfcdeswertgfv"; // Match JwtService key
+
+var key = "refdrewsaqxdcvfgtrhyjuinhgtfrdewsazxcvfgbhnjuioklpoimnhgtrfcdeswertgfv"; 
 builder.Services
     .AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options =>
@@ -33,13 +33,13 @@ builder.Services
 
 builder.Services.AddControllers();
 
-// Configure Swagger with JWT support
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
 {
     c.SwaggerDoc("v1", new OpenApiInfo { Title = "Hotel Booking API", Version = "v1" });
 
-    // Add JWT Authentication to Swagger
+   
     c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
     {
         Name = "Authorization",
@@ -68,7 +68,7 @@ builder.Services.AddSwaggerGen(c =>
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
@@ -77,7 +77,7 @@ if (app.Environment.IsDevelopment())
 app.UseStaticFiles();
 app.UseHttpsRedirection();
 
-app.UseAuthentication(); // Enable authentication
+app.UseAuthentication(); 
 app.UseAuthorization();
 
 app.MapControllers();

@@ -4,7 +4,7 @@ const registerUrl = "http://localhost:5023/api/User/register";
 
 let token = "";
 
-// Register Function
+
 async function register() {
     const name = document.getElementById("regName").value;
     const email = document.getElementById("regEmail").value;
@@ -23,7 +23,7 @@ async function register() {
     }
 }
 
-// Login Function
+
 async function login() {
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
@@ -41,7 +41,7 @@ async function login() {
         alert("Login failed! Check credentials.");
     }
 }
-//display trains
+
 function displayTrains(trains) {
     const trainList = document.getElementById("trainList");
     trainList.innerHTML = "";
@@ -60,7 +60,7 @@ function displayTrains(trains) {
 }
 
 
-// Get All Trains
+
 async function getAllTrains() {
     const response = await fetch(apiBaseUrl, {
         method: "GET",
@@ -82,7 +82,7 @@ async function getAllTrains() {
     }
 }
 
-// Get Train by ID
+
 async function getTrainById() {
     const id = document.getElementById("trainId").value;
     const response = await fetch(`${apiBaseUrl}/${id}`, {

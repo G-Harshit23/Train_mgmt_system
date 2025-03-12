@@ -40,7 +40,7 @@ namespace Trainapi.Controllers
             {
                 return BadRequest("Invalid user details");
             }
-            //generate JWT token
+           
 
             return Ok(_jwtService.GenerateToken(user.Email));
         }

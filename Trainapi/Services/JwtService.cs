@@ -16,7 +16,7 @@ namespace Trainapi.Services
         public string GenerateToken(string username)
         {
             var tokenHandler = new JwtSecurityTokenHandler();
-            var key = Encoding.UTF8.GetBytes(_key); // Ensure this matches Program.cs
+            var key = Encoding.UTF8.GetBytes(_key);
 
             var tokenDescriptor = new SecurityTokenDescriptor
             {
